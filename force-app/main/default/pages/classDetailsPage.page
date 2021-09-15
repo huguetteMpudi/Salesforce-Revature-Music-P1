@@ -1,0 +1,51 @@
+<apex:page controller="rmsClassesController">
+    <head>
+        <title>Class Information Page</title>
+
+        <body>
+
+            <div class='align-center' style='text-align:center;'>
+                <!-- Image will go here -->
+                <apex:variable var="img" value="StockImages1/{!currentClass.Class_Image__c}"/>
+                <apex:image url="{!URLFOR($Resource.StockImages1, img)}" style="max-wiidth:240px;max-height:240px;"/> <br />
+                
+            </div>
+
+            <div class="align-center" style="text-align:center;">
+                <!--Image for the class will go here-->
+
+                <!--Displaying all class information needed-->
+                <apex:outputText value="{!currentClass.Name}" style="font-weight:bold;"/>
+                <br/>
+                <apex:outputText value="{!currentClass.Students_currently_in_Class__c}"/>
+                <br/>
+                <apex:outputText value="{!currentInstructor}"/>
+                <br/>
+                <apex:outputText value="{!currentAssistantInstructor}"/>
+                <br/>
+                <apex:outputText value="{!currentClassRoster}"/>
+                <br/>
+
+                <!--List out students names in a column. Names come from the corresponding class roster-->
+                <apex:repeat value="{!currentStudentList}" var="Stu">
+                    <li>
+                        <apex:outputText value="{!Stu.Name}"/>
+                    </li>
+                </apex:repeat>
+                
+                
+            </div>
+
+            <!---->
+            <!--Space for Formatting-->
+            <div id ="Spaces">
+                <br />
+                <br />
+            </div>
+
+
+
+        </body>
+        
+    </head>
+</apex:page>

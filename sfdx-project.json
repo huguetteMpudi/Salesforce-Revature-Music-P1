@@ -1,0 +1,12 @@
+{
+  "packageDirectories": [
+    {
+      "path": "force-app",
+      "default": true
+    }
+  ],
+  "name": "P1Amp",
+  "namespace": "",
+  "sfdcLoginUrl": "andrew.s.garmon@wise-panda-r141n3.com",
+  "sourceApiVersion": "52.0"
+}
